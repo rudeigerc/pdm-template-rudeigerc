@@ -6,6 +6,9 @@ description = ""
 authors = [
     {name = "rudeigerc", email = "rudeigerc@gmail.com"},
 ]
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
 dependencies = []
 requires-python = ">=3.8"
 readme = "README.md"
@@ -14,3 +17,41 @@ license = {text = "MIT"}
 [build-system]
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
+
+[tool.pdm.dev-dependencies]
+lint = [
+    "ruff>=0.0.277",
+    "black>=23.3.0",
+    "mypy>=1.4.1",
+    "pre-commit>=3.3.3",
+]
+
+[tool.pdm.scripts]
+lint = "pre-commit run --all-files"
+
+[[tool.pdm.source]]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+name = "tuna"
+
+[[tool.pdm.source]]
+url = "https://mirror.sjtu.edu.cn/pypi/web/simple"
+name = "sjtug"
+
+[tool.ruff]
+line-length = 88
+select = [
+    # flake8-bugbear
+    "B",
+    # pycodestyle - Error
+    "E",
+    # Pyflakes
+    "F",
+    # isort
+    "I",
+    # pycodestyle - Warning
+    "W"
+]
+exclude = ["E501"]
+
+[tool.ruff.pydocstyle]
+convention = "google"
