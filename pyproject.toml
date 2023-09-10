@@ -20,10 +20,10 @@ build-backend = "pdm.backend"
 
 [tool.pdm.dev-dependencies]
 lint = [
-    "ruff>=0.0.277",
-    "black>=23.3.0",
-    "mypy>=1.4.1",
-    "pre-commit>=3.3.3",
+    "ruff>=0.0.287",
+    "black>=23.9.0",
+    "mypy>=1.5.1",
+    "pre-commit>=3.4.0",
 ]
 
 [tool.pdm.scripts]
