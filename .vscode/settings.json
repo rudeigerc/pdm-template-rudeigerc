@@ -1,14 +1,26 @@
 {
-    "python.formatting.provider": "none",
-    "python.linting.flake8Enabled": false,
-    "python.analysis.extraPaths": [".venv/lib/python3.11/site-packages"],
-    "[python]": {
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.fixAll": true
-        },
-        "editor.defaultFormatter": "ms-python.black-formatter"
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
     },
-    "python.linting.mypyEnabled": true,
-    "python.linting.mypyPath": ".venv/bin/mypy",
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+      88
+    ]
+  },
+  "black-formatter.path": [
+    ".venv/bin/black"
+  ],
+  "mypy-type-checker.path": [
+    ".venv/bin/mypy"
+  ],
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.extraPaths": [
+    ".venv/lib/python3.11/site-packages"
+  ],
+  "python.analysis.fixAll": [
+    "source.unusedImports"
+  ],
+  "python.languageServer": "Pylance"
 }

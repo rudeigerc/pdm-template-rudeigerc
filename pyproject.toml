@@ -25,9 +25,16 @@ lint = [
     "mypy>=1.5.1",
     "pre-commit>=3.4.0",
 ]
+docs = [
+    "mkdocs>=1.5.2",
+    "mkdocs-material>=9.2.8",
+    "mkdocstrings>=0.23.0",
+    "mkdocstrings-python>=1.6.2",
+]
 
 [tool.pdm.scripts]
 lint = "pre-commit run --all-files"
+docs = "mkdocs serve"
 
 [[tool.pdm.source]]
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
