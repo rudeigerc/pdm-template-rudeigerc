@@ -31,10 +31,15 @@ docs = [
     "mkdocstrings>=0.23.0",
     "mkdocstrings-python>=1.6.2",
 ]
+test = [
+    "pytest>=7.4.2",
+    "pytest-cov>=4.1.0",
+]
 
 [tool.pdm.scripts]
 lint = "pre-commit run --all-files"
 docs = "mkdocs serve"
+test = "pytest -v tests"
 
 [[tool.pdm.source]]
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"

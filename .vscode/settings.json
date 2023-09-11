@@ -22,5 +22,11 @@
   "python.analysis.fixAll": [
     "source.unusedImports"
   ],
-  "python.languageServer": "Pylance"
+  "python.languageServer": "Pylance",
+  "python.testing.pytestArgs": [
+    "tests"
+  ],
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestPath": ".venv/bin/pytest",
+  "python.testing.unittestEnabled": false
 }
