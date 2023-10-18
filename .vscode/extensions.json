@@ -1,10 +1,12 @@
 {
   "recommendations": [
     "charliermarsh.ruff",
+    "editorconfig.editorconfig",
     "ms-python.black-formatter",
     "ms-python.mypy-type-checker",
     "ms-python.python",
     "ms-python.vscode-pylance",
-    "njpwerner.autodocstring"
+    "njpwerner.autodocstring",
+    "tamasfe.even-better-toml",
   ]
 }

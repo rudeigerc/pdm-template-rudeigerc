@@ -1,3 +1,33 @@
-site_name: My Docs
-
-theme: material
+site_name: PDM Project Template
+copyright: Copyright &copy; 2023 Yuchen Cheng
+watch:
+  - src/pdm_template_rudeigerc
+  - docs
+  - mkdocs.yml
+theme:
+  name: material
+  language: en
+  features:
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+plugins:
+  # https://squidfunk.github.io/mkdocs-material/plugins/
+  - search
+markdown_extensions:
+  # https://squidfunk.github.io/mkdocs-material/reference/
+  - admonition
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
