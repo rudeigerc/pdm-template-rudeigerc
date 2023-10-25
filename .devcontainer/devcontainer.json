@@ -1,0 +1,62 @@
+{
+  "name": "Python Environment",
+  "build": {
+		"dockerfile": "Dockerfile",
+		"context": ".."
+	},
+  "customizations": {
+		"vscode": {
+			"extensions": [
+        "charliermarsh.ruff",
+        "editorconfig.editorconfig",
+        "ms-python.mypy-type-checker",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "njpwerner.autodocstring",
+        "tamasfe.even-better-toml",
+				"GitHub.copilot"
+			],
+			"settings": {
+        "[python]": {
+          "editor.codeActionsOnSave": {
+            "source.fixAll": true,
+            "source.organizeImports": true
+          },
+          "editor.defaultFormatter": "charliermarsh.ruff",
+          "editor.formatOnSave": true,
+          "editor.rulers": [
+            88
+          ]
+        },
+        "mypy-type-checker.path": [
+          ".venv/bin/mypy"
+        ],
+        "python.analysis.autoImportCompletions": true,
+        "python.analysis.extraPaths": [
+          ".venv/lib/python3.11/site-packages"
+        ],
+        "python.analysis.fixAll": [
+          "source.unusedImports"
+        ],
+        "python.languageServer": "Pylance",
+        "python.testing.pytestArgs": [
+          "tests"
+        ],
+        "python.testing.pytestEnabled": true,
+        "python.testing.pytestPath": ".venv/bin/pytest",
+        "python.testing.unittestEnabled": false,
+        "yaml.customTags": [
+          "!ENV scalar",
+          "!ENV sequence",
+          "tag:yaml.org,2002:python/name:material.extensions.emoji.to_svg",
+          "tag:yaml.org,2002:python/name:material.extensions.emoji.twemoji",
+          "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format"
+        ],
+        "yaml.schemas": {
+          "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
+        }
+      }
+		}
+	},
+	"onCreateCommand": "pre-commit install-hooks"
+}

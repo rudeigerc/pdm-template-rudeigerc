@@ -1,10 +1,10 @@
 
 [project]
 name = "pdm-template-rudeigerc"
-version = "0.1.0"
+dynamic = ["version"]
 description = "A simple Python project template for PDM."
 authors = [
-    {name = "rudeigerc", email = "rudeigerc@gmail.com"},
+    {name = "Yuchen Cheng", email = "rudeigerc@gmail.com"},
 ]
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -14,9 +14,12 @@ classifiers = [
     "Typing :: Typed",
 ]
 dependencies = []
-requires-python = ">=3.9"
+requires-python = ">=3.8"
 readme = "README.md"
 license = {text = "MIT"}
+
+[project.urls]
+Documentation = "https://rudeigerc.github.io/pdm-template-rudeigerc/"
 
 [build-system]
 requires = ["pdm-backend"]
@@ -24,9 +27,8 @@ build-backend = "pdm.backend"
 
 [tool.pdm.dev-dependencies]
 lint = [
-    "ruff>=0.1.0",
-    "black>=23.9.1",
-    "mypy>=1.6.0",
+    "ruff>=0.1.2",
+    "mypy>=1.6.1",
     "pre-commit>=3.5.0",
 ]
 docs = [
@@ -36,7 +38,7 @@ docs = [
     "mkdocstrings-python>=1.6.2",
 ]
 test = [
-    "pytest>=7.4.2",
+    "pytest>=7.4.3",
     "pytest-cov>=4.1.0",
 ]
 
@@ -53,30 +55,37 @@ name = "tuna"
 url = "https://mirror.sjtu.edu.cn/pypi/web/simple"
 name = "sjtug"
 
+[tool.pdm.version]
+source = "scm"
+
 [tool.ruff]
-line-length = 88
 select = [
-    # flake8-bugbear
-    "B",
-    # pycodestyle - Error
-    "E",
-    # Pyflakes
-    "F",
-    # isort
-    "I",
-    # pycodestyle - Warning
-    "W"
+    "B", # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "E", # pycodestyle - Error
+    "F", # Pyflakes
+    "I", # isort
+    "W", # pycodestyle - Warning
+    "UP", # pyupgrade
 ]
-ignore = ["E501"]
+ignore = [
+    "E501", # line-too-long
+    "W191", # tab-indentation
+]
 include = ["**/*.py", "**/*.pyi", "**/pyproject.toml"]
-exclude = [".venv"]
+
+[tool.ruff.isort]
+known-first-party = ["pdm_template_rudeigerc"]
 
 [tool.ruff.pydocstyle]
 convention = "google"
 
 [tool.mypy]
-no_implict_optional = true
-check_untyped_defs = true
-warn_return_any = true
-show_error_codes = true
-warn_unused_ignores = true
+strict = true
+
+[tool.coverage.run]
+parallel = true
+source = [
+    "pdm_template_rudeigerc",
+    "tests",
+]

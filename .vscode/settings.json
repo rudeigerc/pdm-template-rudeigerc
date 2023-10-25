@@ -1,17 +1,15 @@
 {
   "[python]": {
     "editor.codeActionsOnSave": {
-      "source.fixAll": true
+      "source.fixAll": true,
+      "source.organizeImports": true
     },
-    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.formatOnSave": true,
     "editor.rulers": [
       88
     ]
   },
-  "black-formatter.path": [
-    ".venv/bin/black"
-  ],
   "mypy-type-checker.path": [
     ".venv/bin/mypy"
   ],
