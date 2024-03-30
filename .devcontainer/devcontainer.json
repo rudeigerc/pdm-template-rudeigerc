@@ -19,8 +19,8 @@
 			"settings": {
         "[python]": {
           "editor.codeActionsOnSave": {
-            "source.fixAll": true,
-            "source.organizeImports": true
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
           },
           "editor.defaultFormatter": "charliermarsh.ruff",
           "editor.formatOnSave": true,
@@ -45,16 +45,17 @@
         "python.testing.pytestEnabled": true,
         "python.testing.pytestPath": ".venv/bin/pytest",
         "python.testing.unittestEnabled": false,
+        "yaml.schemas": {
+          "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
+        },
         "yaml.customTags": [
           "!ENV scalar",
           "!ENV sequence",
+          "!relative scalar",
           "tag:yaml.org,2002:python/name:material.extensions.emoji.to_svg",
           "tag:yaml.org,2002:python/name:material.extensions.emoji.twemoji",
           "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format"
-        ],
-        "yaml.schemas": {
-          "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
-        }
+        ]
       }
 		}
 	},

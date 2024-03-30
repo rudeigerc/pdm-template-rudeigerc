@@ -1,5 +1,5 @@
 site_name: PDM Project Template
-copyright: Copyright &copy; 2023 Yuchen Cheng
+copyright: Copyright &copy; 2024 Yuchen Cheng
 watch:
   - src/pdm_template_rudeigerc
   - docs
